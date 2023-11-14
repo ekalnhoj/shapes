@@ -46,19 +46,21 @@ class UnitSquare(Square):
     def __init__(self):
         super().__init__(l=1)
 
-
-if __name__ == "__main__":
-    sha = Shape()
+def print_shape_info(sh):
+    print(f"Shape: {sh.name : >10}\tArea: {sh.get_area():>02.2f}\tPeri: {sh.get_perimeter():>02.2f}")
     
+def example_run():
+    sha = Shape()
     circ = Circle(1)
-
     rect = Rectangle(2,3)
-
     rect_s = Rectangle(5,5)
-
     sq = Square(5)
 
     shapes = [sha,circ,rect,rect_s,sq]
 
-    for sh in shapes:
-        print(f"Shape: {sh.name : >10}\tArea: {sh.get_area():>02.2f}\tPeri: {sh.get_perimeter():>02.2f}")
+    for sha in shapes:
+        print_shape_info(sha)
+    # Done
+
+if __name__ == "__main__":
+    example_run()
